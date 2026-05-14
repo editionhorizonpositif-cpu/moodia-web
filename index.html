@@ -14,7 +14,7 @@
     send_page_view: true
   });
 </script>
-  <base href="$FLUTTER_BASE_HREF">
+  <base href="/">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
@@ -25,6 +25,25 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="moodia">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+<!-- Balises SEO essentielles -->
+<meta name="description" content="Moodia : Votre application de bien-être personnel. Méditations guidées, suivi des émotions, journal intime et habitudes positives. Gratuit et sans publicité.">
+<meta name="keywords" content="bien-être, méditation, émotions, journal, habitudes, santé mentale, relaxation">
+<meta name="author" content="Moodia">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:title" content="Moodia - Bien-être et sérénité">
+<meta property="og:description" content="Prenez soin de vous avec Moodia : méditations, suivi émotionnel et habitudes positives.">
+<meta property="og:image" content="https://app.moodia.xyz/icons/Icon-512.png">
+<meta property="og:url" content="https://app.moodia.xyz">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Moodia - Bien-être et sérénité">
+<meta name="twitter:description" content="Prenez soin de vous avec Moodia.">
+<meta name="twitter:image" content="https://app.moodia.xyz/icons/Icon-512.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
@@ -97,5 +116,15 @@
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
+
+<script>
+  // Événements personnalisés Moodia
+  window.trackMoodiaEvent = function(eventName, eventParams = {}) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', eventName, eventParams);
+      console.log('GA Event:', eventName, eventParams);
+    }
+  };
+</script>
 </body>
 </html>
